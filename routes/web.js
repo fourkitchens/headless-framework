@@ -2,8 +2,11 @@
 
 module.exports = function attach(app) {
 
-  app.routeMulti('/', 'base_template.dust', {
-    resource: [],
+  /**
+   * Posts
+   */
+  app.routeSection('/posts', 'content/posts/posts.dust', {
+    resource: ['blogposts'],
     processors: []
   });
 
