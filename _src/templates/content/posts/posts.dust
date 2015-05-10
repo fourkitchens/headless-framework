@@ -1,20 +1,24 @@
 {>"base_template.dust" title="Posts"/}
 
 {<pageContent}
-  <div class="wrapper">
-    <h1>posts</h1>
-    {#_embedded.fk_blogposts}
-      <h1>
-        <a href="{self}">
-        {label}
-        </a>
-      </h1>
-      <p> Categories:
-      {#categories}
-        {label},
-      {/categories}
-      <p>
-    {/_embedded.fk_blogposts}
-    <a href="{_links.fk_next.href}">Next</a>
-  </div>
+    <h1>Blog Posts</h1>
+    {#data}
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title black-text">{label}</span>
+        <div class="body">
+        {body|s}
+        </div>
+      </div>
+      <div class="card-action">
+        <p>
+        {#categories}
+          <a href="{self}">{label}</a>
+        {/categories}
+        <p>
+        <a href="{self}">Read More</a>
+      </div>
+      </div>
+    {/data}
+  <a href="{_links.fk_next.href}">Next</a>
 {/pageContent}

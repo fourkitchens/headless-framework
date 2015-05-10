@@ -13,10 +13,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{title}{?title}{/title}</title>
     <meta name="description" content="{metaDescription}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    {>"partials/_styles.dust"/}
   </head>
   <body>
+    <div class="container">
     {+pageContent/}
+    </div>
+    {>"partials/_javascript.dust"/}
   </body>
 </html>
